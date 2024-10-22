@@ -1,9 +1,9 @@
-//your JS code here. If required.
-let ageInput = document.getElementById("age");
+ let ageInput = document.getElementById("age");
       let nameInput = document.getElementById("name");
       let btn = document.getElementById("btn");
 
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
         let name = nameInput.value;
         let age = ageInput.value;
 
@@ -18,11 +18,10 @@ let ageInput = document.getElementById("age");
         })
           .then((data) => {
             alert(data);
+            ageInput.value = "";
+            nameInput.value = "";
           })
           .catch((err) => {
             alert(err);
           });
-
-        // ageInput.value = "";
-        // nameInput.value = "";
       });
